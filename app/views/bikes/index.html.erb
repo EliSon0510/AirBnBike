@@ -1,0 +1,8 @@
+<p>Our different bikes</p>
+<ol>
+  <% @bikes.each do |bike| %>
+ <li><%= bike.category %></li>
+ <% end %>
+</ol>
+
+<%= link_to "Add a bike here!", new_bike_path %>
