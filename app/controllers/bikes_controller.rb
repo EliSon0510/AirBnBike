@@ -19,6 +19,11 @@ class BikesController < ApplicationController
 
   def create
     @bike = Bike.find(bike_params)
+    if @bike.save
+      redirect_to bikes_path
+    else
+      render :new
+    end
   end
 
   def edit
