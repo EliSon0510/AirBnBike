@@ -2,8 +2,10 @@ class BikesController < ApplicationController
 
   before_action :set_bike, only:[:show, :edit, :destroy, :update]
 
+
   def index
-    @bikes = Bike.all
+    #@bikes = Bike.all
+    @bikes = policy_scope(Bike).order(created_at: :desc)
   end
 
   def top
@@ -25,6 +27,7 @@ class BikesController < ApplicationController
     else
       render :new
     end
+     authorize @bike
   end
 
   def edit
