@@ -6,10 +6,14 @@
 <p><%= @bike.description %></p>
 <p><%= @bike.price %></p>
 
-<% if policy(bike).edit? %>
-  <%= link_to "Update this bike", edit_bike_path(@bike) %>
+<% @bikes.each do |bike| %>
+  <% if policy(bike).edit? %>
+    <%= link_to "Update this bike", edit_bike_path(@bike) %>
+  <% end %>
 <% end %>
 
-<% if policy(bike).update? %>
-  <%= link_to "Delete this bike", bike_path(@bike), method: :delete, data: {confirm: "Are you sure?"} %>
+<% @bikes.each do |bike| %>
+  <% if policy(bike).update? %>
+    <%= link_to "Delete this bike", bike_path(@bike), method: :delete, data: {confirm: "Are you sure?"} %>
+  <% end %>
 <% end %>
