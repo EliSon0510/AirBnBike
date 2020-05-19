@@ -32,6 +32,11 @@ class BikesController < ApplicationController
 
   def update
     @bike.update(bike_params)
+    if @bike.save
+      redirect_to bikes_path
+    else
+      render :edit
+    end
   end
 
   def destroy
