@@ -5,6 +5,8 @@ ruby '2.6.6'
 
 gem 'devise'
 gem 'simple_form'
+gem 'dotenv-rails', groups: [:development, :test]
+gem 'cloudinary', '~> 1.12.0'
 
 gem 'pundit'
 

@@ -1,6 +1,8 @@
 <%= simple_form_for [@user, @bike] do |f| %>
-<%= f.association :category, input_html: { class: “beautiful-dropdown” }, include_hidden: false %>
+<%= f.label :category %>
+<%= f.select :category, ["e-bike", "mountain bike", "tandem bike", "children bike", "e-mountain bike", "city bike", "racing bike"], include_blank: 'Select a Group', class: 'form-control' %>
 <%= f.input :price %>
 <%= f.input :description %>
+<%= f.input :photo, as: :file %>
 <%= f.submit "submit", class: "btn btn-primary" %>
 <% end %>

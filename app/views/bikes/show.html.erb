@@ -1,3 +1,10 @@
-<p><%= @bike.category %></p>
+<% if @bike.photo.attached? %>
+  <%= cl_image_tag @bike.photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
+
+<h2><%= @bike.category %></h2>
 <p><%= @bike.description %></p>
 <p><%= @bike.price %></p>
+
+<%= link_to "Update this bike", edit_bike_path(@bike) %>
+<%= link_to "Delete this bike", bike_path(@bike), method: :delete, data: {confirm: "Are you sure?"} %>
