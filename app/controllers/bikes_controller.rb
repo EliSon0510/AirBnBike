@@ -7,7 +7,7 @@ class BikesController < ApplicationController
   end
 
   def top
-    @bikes = Bike.find(:all, :order => "id desc", :limit => 10).reverse
+    @bikes = Bike.limit(10)
   end
 
   def show

@@ -1,0 +1,13 @@
+<ol>
+  <% @bikes.each do |bike| %>
+ <li>
+    <% if bike.photo.attached? %>
+      <%= cl_image_tag bike.photo.key, height: 300, width: 400, crop: :fill %>
+    <% end %>
+    <%= bike.category %>
+    <%= link_to"See more", bike_path(bike) %>
+  </li>
+ <% end %>
+</ol>
+
+<%= link_to "Add a bike here!", new_bike_path %>
