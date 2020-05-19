@@ -9,3 +9,27 @@
   margin-top: 10px;
   margin-bottom: 10px;
 }
+
+.container{
+  display: flex;
+  vertical-align: middle;
+  line-height: normal;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.container-title{
+  color: #028090;
+}
+
+.container > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  border: white 2px solid;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+
+}
+

@@ -6,14 +6,14 @@
 
 
 <div class="flex-container">
-  <%= link_to "Add a bike!", new_bike_path, class: "btn-round-corners"%>
+  <%= link_to "Add a new bike !", new_bike_path, class: "btn-round-corners"%>
 </div>
 
 
 <div class="flex-container">
   <h1>Our available bikes</h1>
   <br>
-  <div class="cards">
+  <div class="grid-cards">
 
     <% @bikes.each do |bike| %>
       <div class="card-bike">

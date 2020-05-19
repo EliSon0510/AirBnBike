@@ -1,5 +1,21 @@
-<h1></h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://dfp2hfrf3mn0u.cloudfront.net/cre/creston-ic-v3_1600x685_home-main-banner_2019_SYNCROS_1616656_jpg_original_1.jpg);">
+    <h1>Infos on selected bike</h1>
+</div>
 
-<p><%= @bike.category %></p>
-<p><%= @bike.description %></p>
-<p><%= @bike.price %></p>
+
+<div class="container grid-cards">
+  <div class="container-title">
+    <h1><%= @bike.category.upcase %></h1>
+  </div>
+
+  <div class="container-infos">
+    <h4>Description</h4>
+    <p><%= @bike.description %></p>
+    <h4>Price</h4>
+    <p><%= @bike.price %> €</p>
+  </div>
+
+  <div class="container">
+    <%= image_tag "Bike1.jpg"%>
+  </div>
+</div>

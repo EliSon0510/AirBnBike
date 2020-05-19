@@ -1,9 +1,12 @@
 .btn-round-corners {
     display: inline-block;
-    background-color: #BCE784;
-    border: white 2px solid;
+    background-color: white;
+    border: #028090 2px solid;
     padding: 16px 36px;
-    margin: 5px;
+    margin: 10px;
     border-radius: 50px;
-    color: #114B5F;
+    color: #028090;
+}
+.btn-round-corners p {
+  font-size: 20px;
 }
