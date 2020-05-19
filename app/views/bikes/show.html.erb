@@ -13,6 +13,14 @@
     <p><%= @bike.description %></p>
     <h4>Price</h4>
     <p><%= @bike.price %> €</p>
+
+    <% if policy(bike).edit? %>
+        <%= link_to "Update this bike", edit_bike_path(@bike) %>
+    <% end %>
+
+    <% if policy(bike).update? %>
+        <%= link_to "Delete this bike", bike_path(@bike), method: :delete, data: {confirm: "Are you sure?"} %>
+    <% end %>
     <%= link_to "Update this bike", edit_bike_path(@bike) %>
     <%= link_to "Delete this bike", bike_path(@bike), method: :delete, data: {confirm: "Are you sure?"} %>
   </div>
@@ -20,6 +28,10 @@
   <div class="container">
     <% if @bike.photo.attached? %>
       <%= cl_image_tag @bike.photo.key, height: 300, width: 400, crop: :fill %>
+    <% else %>
+      <%= image_tag "Bike1.jpg" %>
     <% end %>
   </div>
 </div>
+
+
