@@ -1,8 +1,14 @@
-<p>Our different bikes</p>
-<ol>
-  <% @bikes.each do |bike| %>
- <li><%= bike.category %></li>
- <% end %>
-</ol>
+<div class="flex-container">
+  <%= link_to "Add a bike!", new_bike_path, class: "btn-round-corners"%>
+</div>
 
-<%= link_to "Add a bike here!", new_bike_path %>
+<div class="flex-container">
+  <h1>Our available bikes</h1>
+  <div class="cards">
+    <ol>
+      <% @bikes.each do |bike| %>
+     <li><%= bike.category %></li>
+     <% end %>
+    </ol>
+  </div>
+</div>
