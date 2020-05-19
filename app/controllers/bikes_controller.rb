@@ -2,8 +2,10 @@ class BikesController < ApplicationController
 
   before_action :set_bike, only:[:show, :edit, :destroy, :update]
 
+
   def index
-    @bikes = Bike.all
+    #@bikes = Bike.all
+    @bikes = policy_scope(Bike).order(created_at: :asc)
   end
 
   def top
@@ -18,7 +20,9 @@ class BikesController < ApplicationController
   end
 
   def create
-    @bike = Bike.find(bike_params)
+    @bike = Bike.new(bike_params)
+    @bike.user = current_user
+    authorize @bike
   end
 
   def edit
