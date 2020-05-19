@@ -1,5 +1,6 @@
+<%= cl_image_tag @bike.photo.key, height: 300, width: 400, crop: :fill %>
 <p><%= @bike.category %></p>
 <p><%= @bike.description %></p>
 <p><%= @bike.price %></p>
 
-<p><%= link_to "Book the bike", , data: {"Are you sure?"} %></p>
+<p><%= link_to "Destroy the bike", bike_path(bike), method: :delete , data: {"Are you sure to delete this bike?"} %></p>

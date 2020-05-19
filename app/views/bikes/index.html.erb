@@ -1,8 +1,13 @@
 <h1>Our different bikes</h1>
+
 <ol>
   <% @bikes.each do |bike| %>
- <li><%= bike.category %></li>
-  <li><%=  %></li>
+ <li>
+    <% if bike.photo.attached? %>
+      <%= cl_image_tag bike.photo.key, height: 300, width: 400, crop: :fill %>
+    <% end %>
+    <%= bike.category %>
+  </li>
  <% end %>
 </ol>
 
