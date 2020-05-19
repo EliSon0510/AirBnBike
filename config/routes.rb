@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'bikes#index'
+  root to: 'bikes#top'
   resources :bikes do
     collection do
       get :top

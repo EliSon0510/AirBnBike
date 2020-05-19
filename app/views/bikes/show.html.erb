@@ -13,9 +13,13 @@
     <p><%= @bike.description %></p>
     <h4>Price</h4>
     <p><%= @bike.price %> €</p>
+    <%= link_to "Update this bike", edit_bike_path(@bike) %>
+    <%= link_to "Delete this bike", bike_path(@bike), method: :delete, data: {confirm: "Are you sure?"} %>
   </div>
 
   <div class="container">
-    <%= image_tag "Bike1.jpg"%>
+    <% if @bike.photo.attached? %>
+      <%= cl_image_tag @bike.photo.key, height: 300, width: 400, crop: :fill %>
+    <% end %>
   </div>
 </div>
