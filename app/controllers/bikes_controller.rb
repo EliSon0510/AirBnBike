@@ -10,6 +10,7 @@ class BikesController < ApplicationController
 
   def top
     @bikes = Bike.limit(10)
+    authorize @bikes
   end
 
   def show
@@ -17,17 +18,18 @@ class BikesController < ApplicationController
 
   def new
     @bike = Bike.new
+    authorize @bike
   end
 
   def create
     @bike = Bike.new(bike_params)
     @bike.user = current_user
+    authorize @bike
     if @bike.save
       redirect_to bikes_path
     else
       render :new
     end
-    authorize @bike
   end
 
   def edit
@@ -55,6 +57,7 @@ class BikesController < ApplicationController
 
   def set_bike
     @bike = Bike.find(params[:id])
+    authorize @bike
   end
 
 end
