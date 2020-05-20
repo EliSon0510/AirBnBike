@@ -1,9 +1,10 @@
 
-<h3>Book your bike here:</h3>
 
-<%= simple_form_for [bike, rental] do |f| %>
-  <%= f.label :category %>
-  <%= f.select :category, ["e-bike", "mountain bike", "tandem bike", "children bike", "e-mountain bike", "city bike", "racing bike"], include_blank: 'Select a Group', class: 'form-control' %>
-  <%= f.input :price  %>
-  <%= f.button :submit, class: "btn btn-primary" %>
+
+<%= simple_form_for([@bike, @rental]) do |f| %>
+  <%= f.input :start_date, as: :date  %>
+  <%= f.input :end_date, as: :date  %>
+  <%= f.submit %>
 <% end %>
+
+<h2> Last step before your bike is booked ! </h2>

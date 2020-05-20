@@ -2,10 +2,10 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'bikes#top'
   resources :bikes do
-    resources :rentals, only: [:new, :create]
-      collection do
+    collection do
       get :top
     end
+    resources :rentals, only: [:new, :create]
   end
   resources :rentals, only: [:destroy]
 end
