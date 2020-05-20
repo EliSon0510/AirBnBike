@@ -22,6 +22,7 @@
         <%= link_to "Delete this bike", bike_path(@bike), method: :delete, data: {confirm: "Are you sure?"} %>
     <% end %>
     <%= link_to "Update this bike", edit_bike_path(@bike) %>
+    <%= link_to "Book this bike", new_bike_rental_path(@bike) %>
     <%= link_to "Delete this bike", bike_path(@bike), method: :delete, data: {confirm: "Are you sure?"} %>
   </div>
 
