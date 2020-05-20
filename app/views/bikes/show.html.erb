@@ -21,6 +21,8 @@
     <% if policy(@bike).update? %>
         <%= link_to "Delete this bike", bike_path(@bike), method: :delete, data: {confirm: "Are you sure?"} %>
     <% end %>
+    <%= link_to "Book this bike", new_bike_rental_path(@bike) %>
+
   </div>
 
   <div class="container">
