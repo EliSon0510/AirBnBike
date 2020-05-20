@@ -1,8 +1,21 @@
-<%= simple_form_for [@user, @bike] do |f| %>
-<%= f.label :category %>
-<%= f.select :category, ["e-bike", "mountain bike", "tandem bike", "children bike", "e-mountain bike", "city bike", "racing bike"], include_blank: 'Select a Group', class: 'form-control' %>
-<%= f.input :price %>
-<%= f.input :description %>
-<%= f.input :photo, as: :file %>
-<%= f.submit "submit", class: "btn btn-primary" %>
-<% end %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.giant-bicycles.com/b_white,c_crop,h_600,q_70,w_1920/jv39jkthrz5szrlk2jka/Escape_range_banner.jpg);">
+  <div class="container">
+    <h1>Add a new bike</h1>
+  </div>
+</div>
+
+<div class="flex-container">
+  <h2>Please tell us more about your bike</h2>
+</div>
+
+<div class="flex-container">
+  <%= simple_form_for [@user, @bike] do |f| %>
+  <%= f.label :category %>
+  <%= f.select :category, ["e-bike", "mountain bike", "tandem bike", "children bike", "e-mountain bike", "city bike", "racing bike"], include_blank: 'Select a category', class: 'form-control' %>
+  <%= f.input :price %>
+  <%= f.input :description %>
+  <%= f.input :photo, as: :file %>
+  <%= f.submit "submit", class: "btn btn-primary" %>
+  <% end %>
+
+</div>
