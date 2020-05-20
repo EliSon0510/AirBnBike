@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
 #require 'open-uri'
 
 puts "Deleting users..."
@@ -34,12 +35,46 @@ puts "Feeding the database.. please wait.."
 
 
 
-   # p Bike.create!(category: 'city bike', description: 'for the city', price:20, user: user_3)
-   # p Bike.create!(category: 'children bike', description: 'for children', price:15, user: user_4)
-   # p Bike.create!(category: 'e-mountain bike', description: 'used in the mountains, goes faster than any other bikes', price:45, user: user_1)
-   # p Bike.create!(category: 'tandem bike', description: 'for ellie', price:20, user: user_2)
-   # p Bike.create!(category: 'racing bike', description: 'if you want to do a race', price:50, user: user_3)
-   # p Bike.create!(category: 'mountain bike', description: 'used in the mountains not in a city', price:30, user: user_4)
-   # p Bike.create!(category: 'city bike', description: 'for the city', price:20, user: user_1)
+   p bike_2 = Bike.create!(
+    category: 'city bike',
+    description: 'for the city',
+    price:20,
+    user: user_3)
+
+   p Bike.create!(
+    category: 'children bike',
+    description: 'for children',
+    price:15,
+    user: user_4)
+
+   p Bike.create!(
+    category: 'e-mountain bike',
+    description: 'used in the mountains, goes faster than any other bikes',
+    price:45,
+    user: user_1)
+
+   p Bike.create!(
+    category: 'tandem bike',
+    description: 'for ellie',
+    price:20,
+    user: user_2)
+
+   p Bike.create!(
+    category: 'racing bike',
+    description: 'if you want to do a race',
+    price:50,
+    user: user_3)
+
+    p Bike.create!(
+      category: 'mountain bike',
+      description: 'used in the mountains not in a city',
+      price:30,
+      user: user_4)
+
+    p Bike.create!(
+      category: 'city bike',
+      description: 'for the city',
+      price:20,
+      user: user_1)
 
 puts "Finished! Enjoy your new bikes!"
