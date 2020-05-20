@@ -1,19 +1,36 @@
-<% if @bike.photo.attached? %>
-  <%= cl_image_tag @bike.photo.key, height: 300, width: 400, crop: :fill %>
-<% end %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://dfp2hfrf3mn0u.cloudfront.net/cre/creston-ic-v3_1600x685_home-main-banner_2019_SYNCROS_1616656_jpg_original_1.jpg);">
+    <h1>Infos on selected bike</h1>
+</div>
 
-<h2><%= @bike.category %></h2>
-<p><%= @bike.description %></p>
-<p><%= @bike.price %></p>
 
-<% @bikes.each do |bike| %>
-  <% if policy(bike).edit? %>
+<div class="container grid-cards">
+  <div class="container-title">
+    <h1><%= @bike.category.upcase %></h1>
+  </div>
+
+  <div class="container-infos">
+    <h4>Description</h4>
+    <p><%= @bike.description %></p>
+    <h4>Price</h4>
+    <p><%= @bike.price %> €</p>
+
+    <% if policy(bike).edit? %>
+        <%= link_to "Update this bike", edit_bike_path(@bike) %>
+    <% end %>
+
+    <% if policy(bike).update? %>
+        <%= link_to "Delete this bike", bike_path(@bike), method: :delete, data: {confirm: "Are you sure?"} %>
+    <% end %>
     <%= link_to "Update this bike", edit_bike_path(@bike) %>
-  <% end %>
-<% end %>
-
-<% @bikes.each do |bike| %>
-  <% if policy(bike).update? %>
     <%= link_to "Delete this bike", bike_path(@bike), method: :delete, data: {confirm: "Are you sure?"} %>
-  <% end %>
-<% end %>
+  </div>
+
+  <div class="container">
+    <% if @bike.photo.attached? %>
+      <%= cl_image_tag @bike.photo.key, height: 300, width: 400, crop: :fill %>
+    <% else %>
+      <%= image_tag "Bike1.jpg" %>
+    <% end %>
+  </div>
+</div>
+
