@@ -27,7 +27,7 @@ class BikesController < ApplicationController
     else
       render :new
     end
-     authorize @bike
+    authorize @bike
   end
 
   def edit
