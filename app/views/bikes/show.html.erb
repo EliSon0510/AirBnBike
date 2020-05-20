@@ -14,15 +14,13 @@
     <h4>Price</h4>
     <p><%= @bike.price %> €</p>
 
-    <% if policy(bike).edit? %>
+    <% if policy(@bike).edit? %>
         <%= link_to "Update this bike", edit_bike_path(@bike) %>
     <% end %>
 
-    <% if policy(bike).update? %>
+    <% if policy(@bike).update? %>
         <%= link_to "Delete this bike", bike_path(@bike), method: :delete, data: {confirm: "Are you sure?"} %>
     <% end %>
-    <%= link_to "Update this bike", edit_bike_path(@bike) %>
-    <%= link_to "Delete this bike", bike_path(@bike), method: :delete, data: {confirm: "Are you sure?"} %>
   </div>
 
   <div class="container">

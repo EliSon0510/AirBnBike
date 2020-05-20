@@ -5,8 +5,16 @@ class BikePolicy < ApplicationPolicy
     end
   end
 
+  def show?
+    true
+  end
+
+  def top?
+    true
+  end
+
   def create?
-    return true
+    true
   end
 
   def edit?
