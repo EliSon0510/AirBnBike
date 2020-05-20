@@ -1,10 +1,11 @@
 <h2> Last step before your bike is booked ! </h2>
 
-
+<div class="flex-container">
 
 <%= simple_form_for([@bike, @rental]) do |f| %>
   <%= f.input :start_date, as: :date  %>
   <%= f.input :end_date, as: :date  %>
   <%= f.submit %>
 <% end %>
+</div>
 
