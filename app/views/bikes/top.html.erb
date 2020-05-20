@@ -1,13 +1,31 @@
-<ol>
-  <% @bikes.each do |bike| %>
- <li>
-    <% if bike.photo.attached? %>
-      <%= cl_image_tag bike.photo.key, height: 300, width: 400, crop: :fill %>
-    <% end %>
-    <%= bike.category %>
-    <%= link_to"See more", bike_path(bike) %>
-  </li>
- <% end %>
-</ol>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.forwardlookout.com/wp-content/uploads/2020/02/bikes.jpg);">
+  <div class="container">
+    <h1>Last 10 bikes added by users</h1>
+  </div>
+</div>
 
-<%= link_to "Add a bike here!", new_bike_path %>
+
+<div class="flex-container">
+  <%= link_to "Add a new bike !", new_bike_path, class: "btn-round-corners"%>
+</div>
+
+<div class="flex-container">
+  <div class="grid-cards">
+      <h2>Select your next bike</h2>
+
+      <% @bikes.each do |bike| %>
+        <div class="card-bike">
+          <% if bike.photo.attached? %>
+            <%= cl_image_tag bike.photo.key, height: 300, width: 400, crop: :fill %>
+          <% else %>
+          <%= image_tag "Bike1.jpg" %>
+          <% end %>
+
+          <h3><%= link_to bike.category, bike_path(bike) %></h3>
+          <h2><%= bike.price %>€</h2>
+          <%= link_to"See more", bike_path(bike) %>
+        </div>
+      <% end %>
+
+  </div>
+</div>
