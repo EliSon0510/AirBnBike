@@ -27,6 +27,7 @@ puts "Feeding the database.. please wait.."
   description: 'This bike has different modes, maximum speed of 25km/h',
   price:40,
   user: user_1,
+
   location: "Brussel"
   )
 
@@ -68,6 +69,7 @@ puts "Feeding the database.. please wait.."
  bike_4.photo.attach(io: file_4, filename: 'image.png', content_type: 'image/png')
  bike_4.save!
 
+
    p bike_5 = Bike.new(
     category: 'tandem bike',
     description: 'Rent this tandem bike if you want to laugh, have fun and lose kcal',
@@ -75,7 +77,7 @@ puts "Feeding the database.. please wait.."
     user: user_2,
     location: "Brussel")
 
-  file_5 = URI.open('https://images-na.ssl-images-amazon.com/images/I/510WP06-viL._AC_SX425_.jpg')
+  file_5 = URI.open('https://i.ebayimg.com/images/g/70kAAOSwmTddL1lx/s-l300.jpg')
   bike_5.photo.attach(io: file_5, filename: 'image.png', content_type: 'image/png')
   bike_5.save!
 
@@ -89,6 +91,7 @@ puts "Feeding the database.. please wait.."
   file_6 = URI.open('https://i.ebayimg.com/images/g/99QAAOSwKtlWpMwa/s-l300.jpg')
   bike_6.photo.attach(io: file_6, filename: 'image.png', content_type: 'image/png')
   bike_6.save!
+
 
     p bike_7 = Bike.new(
       category: 'mountain bike',
