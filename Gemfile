@@ -12,6 +12,7 @@ gem 'pg_search', '~> 2.3.0'
 
 
 gem 'pundit'
+gem 'geocoder'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3'
