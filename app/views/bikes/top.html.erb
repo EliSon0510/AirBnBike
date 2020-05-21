@@ -9,7 +9,7 @@
     <%= text_field_tag :query,
       params[:query],
       class: "form-control",
-      placeholder: "Find a bike"
+      placeholder: "Search for a bike or a location here!"
     %>
     <div id="but">
       <%= submit_tag "Search", class: "btn-round-corners" %>
@@ -24,10 +24,9 @@
 </div>
 
 <div class="flex-container">
+  <h2>Select your next bike</h2>
+  <br>
   <div class="grid-cards">
-      <div id="h2">
-        <h2>Select your next bike</h2>
-      </div>
 
       <% @bikes.each do |bike| %>
         <div class="card-bike">
@@ -38,10 +37,9 @@
           <% end %>
 
           <h3><%= link_to bike.category, bike_path(bike) %></h3>
-          <h5><%= bike.description %></h5>
+          <h2><%= bike.location %></h2>
           <h2><%= bike.price %>€</h2>
-
-
+          <p><%= bike.description %></p>
           <%= link_to"See more", bike_path(bike) %>
         </div>
       <% end %>
