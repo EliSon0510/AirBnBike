@@ -18,11 +18,11 @@ puts "Feeding the database.. please wait.."
  user_3 = User.create!(email: "guillaume@gmail.com", password: "wagon123")
  user_4 = User.create!(email:"phaedon@gmail.com", password: "greece")
 
- puts "Now deleting old bikes.."
- puts ". . . . . d e l e t i n g . . . . . please wait . . . . . ."
- Bike.destroy_all
+#  puts "Now deleting old bikes.."
+#  puts ". . . . . d e l e t i n g . . . . . please wait . . . . . ."
+#  Bike.destroy_all
 
- p bike_1 = Bike.new(
+ p bike_1 = Bike.create!(
   category: 'e-bike',
   description: 'you can go really fast',
   price:40,
@@ -77,4 +77,4 @@ puts "Feeding the database.. please wait.."
       price:20,
       user: user_1)
 
-puts "Finished! Enjoy your new bikes!"
+# puts "Finished! Enjoy your new bikes!"
