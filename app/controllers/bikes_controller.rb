@@ -14,6 +14,7 @@ class BikesController < ApplicationController
     end
   end
 
+
   def top
     @bikes = Bike.limit(10)
     authorize @bikes
