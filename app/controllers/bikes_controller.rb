@@ -5,8 +5,26 @@ class BikesController < ApplicationController
 
   def index
     #@bikes = Bike.all
+    @bikes = Bike.geocoded
+
+    @markers = @bikes.map do |bike|
+      {
+        lat: bike.latitude,
+        lng: bike.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { bike: bike })
+
+      }
+    end
+
     @bikes = policy_scope(Bike).order(created_at: :desc)
+    if params[:query].present?
+      sql_query = "category ILIKE :query OR location ILIKE :query"
+      @bikes = Bike.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @bikes = Bike.all
+    end
   end
+
 
   def top
     @bikes = Bike.limit(10)
