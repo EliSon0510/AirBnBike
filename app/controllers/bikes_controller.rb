@@ -15,7 +15,6 @@ class BikesController < ApplicationController
 
       }
     end
-
     @bikes = policy_scope(Bike).order(created_at: :desc)
     if params[:query].present?
       sql_query = "category ILIKE :query OR location ILIKE :query"
