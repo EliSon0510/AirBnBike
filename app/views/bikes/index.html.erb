@@ -25,6 +25,17 @@
 
         <h3><%= link_to bike.category, bike_path(bike) %></h3>
         <h2><%= bike.price %>€</h2>
+        <h5><%= bike.description %></h5>
+
+        <!-- LOCATION here?
+          markers?
+          <div id="map"..-->
+
+          <!-- bike.latitude
+               bike.longtitude
+               bike location
+             -->
+
         <%= link_to"See more", bike_path(bike) %>
       </div>
     <% end %>
