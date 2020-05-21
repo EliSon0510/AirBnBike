@@ -12,6 +12,8 @@
   <%= simple_form_for [@user, @bike] do |f| %>
   <%= f.label :category %>
   <%= f.select :category, ["e-bike", "mountain bike", "tandem bike", "children bike", "e-mountain bike", "city bike", "racing bike"], include_blank: 'Select a category', class: 'form-control' %>
+    <%= f.input :location %>
+
   <%= f.input :price %>
   <%= f.input :description %>
   <%= f.input :photo, as: :file %>

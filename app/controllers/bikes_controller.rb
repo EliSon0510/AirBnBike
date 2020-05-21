@@ -5,6 +5,15 @@ class BikesController < ApplicationController
 
   def index
     #@bikes = Bike.all
+    @bikes = Bike.geocoded
+
+    @markers = @bikes.map do |bike|
+      {
+        lat: bike.latitude,
+        lng: bike.longitude
+      }
+    end
+
     @bikes = policy_scope(Bike).order(created_at: :desc)
   end
 
@@ -52,7 +61,7 @@ class BikesController < ApplicationController
   private
 
   def bike_params
-    params.require(:bike).permit(:price, :category, :description, :photo)
+    params.require(:bike).permit(:price, :category, :description, :photo, :location)
   end
 
   def set_bike

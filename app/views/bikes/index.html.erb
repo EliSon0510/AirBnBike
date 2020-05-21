@@ -9,6 +9,13 @@
   <%= link_to "Add a new bike !", new_bike_path, class: "btn-round-corners"%>
 </div>
 
+<div id="map"
+     style="width: 70%; height: 500px;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+
+</div>
+
 
 <div class="flex-container">
   <h1>Our available bikes</h1>
@@ -24,6 +31,8 @@
         <% end %>
 
         <h3><%= link_to bike.category, bike_path(bike) %></h3>
+        <h2><%= bike.location %></h2>
+
         <h2><%= bike.price %>€</h2>
         <%= link_to"See more", bike_path(bike) %>
       </div>
