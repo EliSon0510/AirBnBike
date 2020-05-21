@@ -9,6 +9,7 @@ class PagesController < ApplicationController
     current_date = Time.now
     rentals = Rental.where(user: current_user)
     binding.pry
-    rentals.select { |rental| rental.end_date < Time.now }
+    @past_rentals = rentals.select { |rental| rental.end_date < Time.now }
+    @futur_rentals = rentals.select { |rental| rental.end_date < Time.now }
   end
 end
