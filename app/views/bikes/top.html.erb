@@ -4,16 +4,30 @@
   </div>
 </div>
 
+<div class="flex-container">
+  <%= form_tag bikes_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a bike"
+    %>
+    <div id="but">
+      <%= submit_tag "Search", class: "btn-round-corners" %>
+      <% end %>
+    </div>
+</div>
 
 <div class="flex-container">
-  <div>
+  <div id="but">
     <%= link_to "Add a new bike !", new_bike_path, class: "btn-round-corners"%>
   </div>
 </div>
 
 <div class="flex-container">
   <div class="grid-cards">
-      <h2>Select your next bike</h2>
+      <div id="h2">
+        <h2>Select your next bike</h2>
+      </div>
 
       <% @bikes.each do |bike| %>
         <div class="card-bike">
