@@ -6,13 +6,13 @@
 
 <div class="flex-container">
   <%= form_tag bikes_path, method: :get do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Find a bike"
-    %>
-    <%= submit_tag "Search", class: "btn-round-corners" %>
-  <% end %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Search for a bike or a location here!"
+  %>
+  <%= submit_tag "Search", class: "btn-round-corners" %>
+<% end %>
 </div>
 
 <div class="flex-container">
