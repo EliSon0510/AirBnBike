@@ -26,13 +26,6 @@ class RentalsController < ApplicationController
     redirect_to bike_path(@rental.bike)
   end
 
-   def destroy
-    @rental = Rental.find(params[:id])
-    authorize @rental
-    @rental.destroy
-    redirect_to bike_path(@rental.bike)
-  end
-
   private
 
   def rentals_params
