@@ -10,3 +10,8 @@
 .btn-round-corners p {
   font-size: 20px;
 }
+
+.btn-round-corners:hover {
+  transform: scale(1.5);
+  color:white;
+}

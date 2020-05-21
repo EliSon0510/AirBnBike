@@ -2,8 +2,14 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  height: 500px;
+  transition: tranform .1s;
 }
 
+.card-bike:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+}
 .card-bike > img {
   height: 200px;
   width: 100%;
