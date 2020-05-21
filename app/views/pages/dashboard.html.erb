@@ -1,0 +1,47 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://dfp2hfrf3mn0u.cloudfront.net/cre/creston-ic-v3_1600x685_home-main-banner_2019_SYNCROS_1616656_jpg_original_1.jpg);">
+    <h1>Your bookings</h1>
+</div>
+
+<div class="flex-container">
+  <h3>Your future bookings</h3>
+  <br>
+</div>
+
+<div class="flex-container">
+
+  <div class="grid-cards">
+
+    <% @future_rentals.each do |future_rental| %>
+
+      <div class="card-bike">
+
+        <%= future_rental.start_date %>
+        <%= '-' %>
+        <%= future_rental.end_date %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="flex-container">
+  <h3>Your previous bookings</h3>
+  <br>
+</div>
+
+<div class="flex-container">
+
+  <div class="grid-cards">
+
+    <% @past_rentals.each do |past_rental| %>
+
+      <div class="card-bike">
+
+        <%= past_rental.start_date %>
+        <%= '-' %>
+        <%= past_rental.end_date %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
