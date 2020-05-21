@@ -9,7 +9,11 @@
 }
 .btn-round-corners p {
   font-size: 20px;
-  position: relative;
+}
+
+a.btn-round-corners {
+  text-decoration: none;
+  color: #028090;
 }
 
 #but {
@@ -18,4 +22,9 @@
 
 #but:hover {
   transform: scale(1.2);
+}
+
+input.btn-round-corners {
+  display: flex;
+  margin-left: 55px;
 }
