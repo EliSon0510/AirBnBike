@@ -27,12 +27,9 @@ puts "Feeding the database.. please wait.."
   description: 'This bike has different modes, maximum speed of 25km/h',
   price:40,
   user: user_1,
-<<<<<<< HEAD
-  location: 'Brussels')
-=======
+
   location: "Brussel"
   )
->>>>>>> master
 
  file_1 = URI.open('https://cdn.shopify.com/s/files/1/1772/1703/t/14/assets/cowboy-bike.png?v=7156884286534268270')
  bike_1.photo.attach(io: file_1, filename: 'image.png', content_type: 'image/png')
