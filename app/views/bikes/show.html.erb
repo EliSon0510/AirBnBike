@@ -10,11 +10,11 @@
 
 
   <div class="container-infos">
-      <h4>Description</h4>
+      <h4><strong>Description</strong></h4>
       <p><%= @bike.description %></p>
-      <h4>Location</h4>
-      <p><%= @bike.location %> €</p>
-      <h4>Price</h4>
+      <h4><strong>Location</strong></h4>
+      <p><%= @bike.location %></p>
+      <h4><strong>Price</strong></h4>
       <p><%= @bike.price %> €</p>
   </div>
 
@@ -29,14 +29,16 @@
 
   <div class="container-infos">
     <% if policy(@bike).edit? %>
-        <%= link_to "Update", edit_bike_path(@bike) %>
+        <%= link_to "Update", edit_bike_path(@bike), class: "btn-round-corners" %>
     <% end %>
 
     <% if policy(@bike).update? %>
-        <%= link_to "Delete", bike_path(@bike), method: :delete, data: {confirm: "Are you sure?"} %>
+        <%= link_to "Delete", bike_path(@bike), method: :delete, data: {confirm: "Are you sure?"}, class: "btn-round-corners" %>
     <% end %>
 
-    <%= link_to "Book", new_bike_rental_path(@bike) %>
+
+    <%= link_to "Book", new_bike_rental_path(@bike),class: "btn-round-corners" %>
+
   </div>
 
 </div>
