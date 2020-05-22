@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   end
   resources :rentals, only: [:destroy]
+
   get 'dashboard', to: 'pages#dashboard'
 end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
