@@ -214,4 +214,3 @@ p bike_17 = Bike.new(
  bike_17.photo.attach(io: file_17, filename: 'image.png', content_type: 'image/jpg')
  bike_17.save!
 
-# puts "Finished! Enjoy your new bikes!"

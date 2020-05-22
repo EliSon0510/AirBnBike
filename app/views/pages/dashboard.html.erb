@@ -3,7 +3,7 @@
 </div>
 
 <div class="flex-container">
-  <h3>Your future bookings</h3>
+  <h3 class="text-center">Your future bookings</h3>
   <br>
 </div>
 
@@ -14,25 +14,57 @@
     <% @future_rentals.each do |future_rental| %>
 
 
-      <div class="card-bike">
-
+      <div class=".card-bike .dashboard">
+        <p class="text-center"> <em>
         <%= future_rental.start_date %>
         <%= '-' %>
         <%= future_rental.end_date %>
-
+        </em></p>
         <% if future_rental.bike.photo.attached? %>
           <%= cl_image_tag future_rental.bike.photo.key, height: 300, width: 400, crop: :fill %>
         <% else %>
           <%= image_tag "logo.png" %>
         <% end %>
         <h3><%= link_to future_rental.bike.category, bike_path(future_rental.bike) %></h3>
+          <%= link_to "Edit your Booking", edit_bike_rental_path(future_rental.bike, future_rental), class: "btn-round-corners" %>
+        <%= link_to "Delete this booking", rental_path(future_rental), method: :delete, remote: true, data: {confirm: "Are you sure?"}, class: "btn-round-corners" %>
+
+
+      </div>
+    <% end %>
+  </div>
+</div>
+<div class="flex-container">
+  <h3>Your previous bookings</h3>
+  <br>
+</div>
+
+<div class="flex-container">
+  <div class="grid-cards">
+    <% @past_rentals.each do |past_rental| %>
+     <div class=".card-bike .dashboard">
+        <p class="text-center"> <em>
+        <%= past_rental.start_date %>
+        <%= '-' %>
+        <%= past_rental.end_date %>
+        </em></p>
+        <% if past_rental.bike.photo.attached? %>
+          <%= cl_image_tag past_rental.bike.photo.key, height: 300, width: 400, crop: :fill %>
+        <% else %>
+          <%= image_tag "logo.png" %>
+        <% end %>
+          <h3><%= link_to past_rental.bike.category, bike_path(past_rental.bike) %></h3>
+          <h3><%= link_to past_rental.bike.category, bike_path(past_rental.bike) %></h3>
+        <%= link_to "Delete this booking", rental_path(past_rental), method: :delete, remote: true, data: {confirm: "Are you sure?"}, class: "btn-round-corners" %>
+      </div>
+
       </div>
     <% end %>
   </div>
 </div>
 
 <div class="flex-container">
-  <h3>Your previous bookings</h3>
+  <h3>Your own bikes</h3>
   <br>
 </div>
 
@@ -40,24 +72,33 @@
 
   <div class="grid-cards">
 
-    <% @past_rentals.each do |past_rental| %>
+    <% @current_user.bikes.each do |bike| %>
 
      <div class="card-bike">
 
-        <%= past_rental.start_date %>
-        <%= '-' %>
-        <%= past_rental.end_date %>
-
-        <% if past_rental.bike.photo.attached? %>
-          <%= cl_image_tag past_rental.bike.photo.key, height: 300, width: 400, crop: :fill %>
+        <% if bike.photo.attached? %>
+          <%= cl_image_tag bike.photo.key, height: 300, width: 400, crop: :fill %>
         <% else %>
           <%= image_tag "logo.png" %>
         <% end %>
-        <h3><%= link_to past_rental.bike.category, bike_path(past_rental.bike) %></h3>
-      </div>
+
+        <h3><%= link_to bike.category, bike_path(bike) %></h3>
+          <%= link_to "Update", edit_bike_path(bike), class: "btn-round-corners" %>
+          <%= link_to "Delete", bike_path(bike), method: :delete, data: {confirm: "Are you sure?"}, class: "btn-round-corners" %>
       </div>
     <% end %>
   </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
 
 
