@@ -3,7 +3,7 @@
 </div>
 
 <div class="flex-container">
-  <h3>Your future bookings</h3>
+  <h3 class="text-center">Your future bookings</h3>
   <br>
 </div>
 
@@ -14,12 +14,12 @@
     <% @future_rentals.each do |future_rental| %>
 
 
-      <div class="card-bike">
-
+      <div class=".card-bike .dashboard">
+        <p class="text-center"> <em>
         <%= future_rental.start_date %>
         <%= '-' %>
         <%= future_rental.end_date %>
-
+        </em></p>
         <% if future_rental.bike.photo.attached? %>
           <%= cl_image_tag future_rental.bike.photo.key, height: 300, width: 400, crop: :fill %>
         <% else %>
@@ -45,17 +45,14 @@
 </div>
 
 <div class="flex-container">
-
   <div class="grid-cards">
-
     <% @past_rentals.each do |past_rental| %>
-
-     <div class="card-bike">
-
+     <div class=".card-bike .dashboard">
+        <p class="text-center"> <em>
         <%= past_rental.start_date %>
         <%= '-' %>
         <%= past_rental.end_date %>
-
+        </em></p>
         <% if past_rental.bike.photo.attached? %>
           <%= cl_image_tag past_rental.bike.photo.key, height: 300, width: 400, crop: :fill %>
         <% else %>
