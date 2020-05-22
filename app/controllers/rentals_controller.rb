@@ -41,7 +41,7 @@ end
     @rental = Rental.find(params[:id])
     authorize @rental
     @rental.destroy
-    redirect_to bike_path(@rental.bike)
+    redirect_to dashboard_path#(anchor: "review-#{@review.id}")
   end
 
   private
