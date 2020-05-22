@@ -32,11 +32,6 @@
   </div>
 </div>
 
-<p id="rental-<%= rental.id %>"><%= rental.content %></p>
-
-
-
-
 <div class="flex-container">
   <h3>Your previous bookings</h3>
   <br>
@@ -65,5 +60,43 @@
     <% end %>
   </div>
 </div>
+
+<div class="flex-container">
+  <h3>Your own bikes</h3>
+  <br>
+</div>
+
+<div class="flex-container">
+
+  <div class="grid-cards">
+
+    <% @current_user.bikes.each do |bike| %>
+
+     <div class="card-bike">
+
+        <% if bike.photo.attached? %>
+          <%= cl_image_tag bike.photo.key, height: 300, width: 400, crop: :fill %>
+        <% else %>
+          <%= image_tag "logo.png" %>
+        <% end %>
+
+        <h3><%= link_to bike.category, bike_path(bike) %></h3>
+          <%= link_to "Update", edit_bike_path(bike), class: "btn-round-corners" %>
+          <%= link_to "Delete", bike_path(bike), method: :delete, data: {confirm: "Are you sure?"}, class: "btn-round-corners" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
 
 
