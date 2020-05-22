@@ -6,6 +6,13 @@
   transition: tranform .3s;
 }
 
+.how-to{
+  padding: 5px;
+  height: 300px;
+  border-radius: 20px;
+  border: #028090 2px solid;
+  }
+
 .card-bike:hover {
   transform: scale(1.1);
   box-shadow: 0 0 8px rgba(0,0,0,0.2);
@@ -14,8 +21,7 @@
   height: 258px;
   width: 100%;
   object-fit: cover;
-  margin-left: 4px;
-  margin-right: 4px;
+
 }
 
 .card-bike h2 {
@@ -27,7 +33,8 @@
 
 }
 
-.card-bike h5 {
+.card-bike h3 {
+  font-size: 20px;
 
 }
 
@@ -42,6 +49,8 @@
 .card-bike a{
   color: #028090;
   padding-top: 10px;
+  font-size: 24px;
+
 }
 
 
@@ -51,6 +60,7 @@
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
+  margin: 5px;
 }
 
 .card-bike-infos .card-bike-user {
@@ -59,3 +69,4 @@
   top: -20px;
   width: 40px;
 }
+
