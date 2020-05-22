@@ -26,6 +26,8 @@
           <%= image_tag "logo.png" %>
         <% end %>
         <h3><%= link_to future_rental.bike.category, bike_path(future_rental.bike) %></h3>
+          <%= link_to "Edit your Booking", edit_bike_rental_path(@rental), class: "btn-round-corners" %>
+
       </div>
     <% end %>
   </div>
@@ -53,7 +55,9 @@
         <% else %>
           <%= image_tag "logo.png" %>
         <% end %>
-        <h3><%= link_to past_rental.bike.category, bike_path(past_rental.bike) %></h3>
+          <h3><%= link_to past_rental.bike.category, bike_path(past_rental.bike) %></h3>
+          <%= link_to "Edit your Booking", edit_bike_rental_path(@rental), class: "btn-round-corners" %>
+
       </div>
       </div>
     <% end %>

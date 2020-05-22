@@ -1,7 +1,16 @@
-<h2> Let's update your booking ! </h2>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.giant-bicycles.com/b_white,c_crop,h_600,q_70,w_1920/jv39jkthrz5szrlk2jka/Escape_range_banner.jpg);">
+  <div class="container">
+    <h1>Edit your booking </h1>
+  </div>
+</div>
 
 <div class="flex-container">
+<p><strong> From </strong><%= @rental.start_date %><strong> until </strong><%=@rental.end_date%></p>
+<p><strong> Price: </strong> <%= @total_price %> € </p>
+</div>
 
+
+<div class="flex-container">
 <%= simple_form_for [@bike, @rental] do |f| %>
   <%= f.input :start_date, as: :date  %>
   <%= f.input :end_date, as: :date  %>
