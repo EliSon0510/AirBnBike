@@ -26,7 +26,7 @@
           <%= image_tag "logo.png" %>
         <% end %>
         <h3><%= link_to future_rental.bike.category, bike_path(future_rental.bike) %></h3>
-          <%= link_to "Edit your Booking", edit_bike_rental_path(@rental), class: "btn-round-corners" %>
+          <%= link_to "Edit your Booking", edit_bike_rental_path(future_rental.bike, future_rental), class: "btn-round-corners" %>
         <%= link_to "Delete this booking", rental_path(future_rental), method: :delete, remote: true, data: {confirm: "Are you sure?"}, class: "btn-round-corners" %>
 
 
@@ -35,7 +35,6 @@
   </div>
 </div>
 
-<p id="rental-<%= rental.id %>"><%= rental.content %></p>
 
 
 
@@ -63,7 +62,6 @@
           <%= image_tag "logo.png" %>
         <% end %>
           <h3><%= link_to past_rental.bike.category, bike_path(past_rental.bike) %></h3>
-          <%= link_to "Edit your Booking", edit_bike_rental_path(@rental), class: "btn-round-corners" %>
           <h3><%= link_to past_rental.bike.category, bike_path(past_rental.bike) %></h3>
         <%= link_to "Delete this booking", rental_path(past_rental), method: :delete, remote: true, data: {confirm: "Are you sure?"}, class: "btn-round-corners" %>
       </div>

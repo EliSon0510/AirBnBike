@@ -23,7 +23,7 @@ class RentalsController < ApplicationController
     @bike = Bike.find(params[:bike_id])
     @rental = Rental.find(params[:id])
     authorize @rental
-     @days = (@end_date.to_i - @start_date.to_i)
+     @days = (@rental.end_date - @rental.start_date).to_i
      @total_price = @days * @bike.price
   end
 
