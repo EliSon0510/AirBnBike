@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     collection do
       get :top
     end
-    resources :rentals, only: [:new, :create]
+    resources :rentals, only: [:new, :create, :edit, :update]
 
   end
   resources :rentals, only: [:destroy]

@@ -26,21 +26,18 @@
     <% end %>
   </div>
 
-
-  <div class="container-infos">
+</div>
+  <div class="container-infos text-center">
     <% if policy(@bike).edit? %>
-        <%= link_to "Update", edit_bike_path(@bike), class: "btn-round-corners" %>
+        <%= link_to "Update the Bike", edit_bike_path(@bike), class: "btn-round-corners" %>
     <% end %>
 
     <% if policy(@bike).update? %>
-        <%= link_to "Delete", bike_path(@bike), method: :delete, data: {confirm: "Are you sure?"}, class: "btn-round-corners" %>
+        <%= link_to "Delete the Bike", bike_path(@bike), method: :delete, data: {confirm: "Are you sure?"}, class: "btn-round-corners" %>
     <% end %>
-
 
     <%= link_to "Book", new_bike_rental_path(@bike),class: "btn-round-corners" %>
 
   </div>
-
-</div>
 
 
