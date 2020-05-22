@@ -115,4 +115,7 @@ puts "Feeding the database.. please wait.."
   bike_8.photo.attach(io: file_8, filename: 'image.png', content_type: 'image/png')
   bike_8.save!
 
-# puts "Finished! Enjoy your new bikes!"
+#puts "Finished! Enjoy your new bikes!"
+
+
+
