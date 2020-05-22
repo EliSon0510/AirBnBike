@@ -22,7 +22,7 @@
     <% if @bike.photo.attached? %>
       <%= cl_image_tag @bike.photo.key, height: 300, width: 400, crop: :fill %>
     <% else %>
-      <%= image_tag "Bike1.jpg" %>
+      <%= image_tag "logo.png" %>
     <% end %>
   </div>
 
