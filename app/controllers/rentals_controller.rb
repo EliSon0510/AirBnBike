@@ -23,7 +23,7 @@ class RentalsController < ApplicationController
     @rental = Rental.find(params[:id])
     authorize @rental
     @rental.destroy
-    redirect_to dashboard_path
+    redirect_to dashboard_path#(anchor: "review-#{@review.id}")
   end
 
   private
