@@ -4,45 +4,79 @@
   </div>
 </div>
 
-<div class="flex-container">
-  <%= form_tag bikes_path, method: :get do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Search for a bike or a location here!"
-    %>
-    <div id="but">
-      <%= submit_tag "Search", class: "btn-round-corners" %>
-      <% end %>
-    </div>
-</div>
 
+  <h1 class="text-center">How to use AirBnBike</h1>
 <div class="flex-container">
-  <div id="but">
-    <%= link_to "Add a new bike !", new_bike_path, class: "btn-round-corners"%>
+  <div class="grid-cards">
+    <div class="card-bike how-to">
+      <div class=".card-bike .card-bike-infos">
+        <h4 class="text-center">You are looking for a bike...</h4>
+      </div>
+      <%= image_tag "LookingForBike.svg" %>
+    </div>
+    <div class="card-bike how-to">
+      <div class=".card-bike .card-bike-infos">
+        <h4 class="text-center">Find the perfect bike in the list</h4>
+      </div>
+      <%= image_tag "RidingBike.svg" %>
+    </div>
+    <div class="card-bike how-to">
+      <div class=".card-bike .card-bike-infos">
+        <h4 class="text-center">Add your bike to the list</h4>
+      </div>
+      <%= image_tag "AddBike.svg" %>
+    </div>
   </div>
 </div>
+
+
+<div class="flex-container">
+  <%= form_tag bikes_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Look for bike or location"
+  %>
+
+  <div id="but">
+    <%= submit_tag "Search", class: "btn-round-corners" %>
+    <% end %>
+  </div>
+
+  <div>
+    <p id="azure-text">------------------</p>
+  </div>
+
+  <div>
+    <h4>Add your bike to the list</h4>
+    <div id="but">
+      <%= link_to "Add a new bike !", new_bike_path, class: "btn-round-corners"%>
+    </div>
+  </div>
+</div>
+
 
 <div class="flex-container">
   <h2>Select your next bike</h2>
   <br>
   <div class="grid-cards">
 
-      <% @bikes.each do |bike| %>
+      <% @bikes.order("updated_at desc").first(9).each do |bike| %>
         <div class="card-bike">
           <% if bike.photo.attached? %>
             <%= cl_image_tag bike.photo.key, height: 300, width: 400, crop: :fill %>
           <% else %>
-          <%= image_tag "Bike1.jpg" %>
+          <%= image_tag "logo.png" %>
           <% end %>
+          <div class=".card-bike .card-bike-infos">
+            <h2><%= link_to bike.category, bike_path(bike) %></h2>
 
-          <h3><%= link_to bike.category, bike_path(bike) %></h3>
+            <h3><%= bike.location %></h3>
+            <h3><%= bike.price %> €/day</h3>
+            <p><%= bike.description %></p>
 
-          <h2><%= bike.location %></h2>
-          <h2><%= bike.price %> €/day</h2>
-          <p><%= bike.description %></p>
-
-          <%= link_to"See more", bike_path(bike) %>
+            <%= link_to"See more", bike_path(bike) %>
+          </div>
         </div>
       <% end %>
 
