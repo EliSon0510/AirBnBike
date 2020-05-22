@@ -21,15 +21,14 @@ class RentalsController < ApplicationController
 
   def edit
     @bike = Bike.find(params[:bike_id])
+    @rental = Rental.find(params[:id])
     authorize @rental
   end
 
   def update
-    @bike = Bike.find(params[:bike_id])
-    @rental = Rental.update(params[:rentals_params]
-    @rental.bike = @bike
-     authorize @rental
-    if @rental.save
+    @rental = Rental.find(params[:id])
+    if @rental.update(rentals_params)
+      authorize @rental
       redirect_to dashboard_path
     else
       render :edit
