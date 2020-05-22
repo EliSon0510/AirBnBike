@@ -13,11 +13,19 @@
 
     <% @future_rentals.each do |future_rental| %>
 
+
       <div class="card-bike">
 
         <%= future_rental.start_date %>
         <%= '-' %>
         <%= future_rental.end_date %>
+
+        <% if future_rental.bike.photo.attached? %>
+          <%= cl_image_tag future_rental.bike.photo.key, height: 300, width: 400, crop: :fill %>
+        <% else %>
+          <%= image_tag "logo.png" %>
+        <% end %>
+        <h3><%= link_to future_rental.bike.category, bike_path(future_rental.bike) %></h3>
       </div>
     <% end %>
   </div>
@@ -34,11 +42,19 @@
 
     <% @past_rentals.each do |past_rental| %>
 
-      <div class="card-bike">
+     <div class="card-bike">
 
         <%= past_rental.start_date %>
         <%= '-' %>
         <%= past_rental.end_date %>
+
+        <% if past_rental.bike.photo.attached? %>
+          <%= cl_image_tag past_rental.bike.photo.key, height: 300, width: 400, crop: :fill %>
+        <% else %>
+          <%= image_tag "logo.png" %>
+        <% end %>
+        <h3><%= link_to past_rental.bike.category, bike_path(past_rental.bike) %></h3>
+      </div>
       </div>
     <% end %>
   </div>
