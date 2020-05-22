@@ -8,11 +8,7 @@ class PagesController < ApplicationController
   def dashboard
     current_date = Time.now
     rentals = Rental.where(user: current_user)
-    @past_rentals = rentals.select { |rental| rental.end_date < Time.now }
-    @future_rentals = rentals.select { |rental| rental.start_date > Time.now || rental.start_date == Time.now}
-  end
-
-  def destroy
-
+    @past_rentals = rentals.select { |rental| rental.end_date < Date.today }
+    @future_rentals = rentals.select { |rental| rental.start_date >= Date.today }
   end
 end
