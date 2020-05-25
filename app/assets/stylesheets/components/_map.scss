@@ -1,4 +1,7 @@
 #map {
-  width: 70%;
-  height: 500px;
+  width: 30%;
+  margin-right: 10px;
+  height: calc(100vh - --var(navbar-height));
+  position: sticky;
+  top: var(--navbar-height);
 }

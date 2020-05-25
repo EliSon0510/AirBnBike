@@ -1,9 +1,15 @@
+:root {
+  --navbar-height: 100px
+}
+
 .navbar-lewagon {
   justify-content: space-between;
   background: azure;
   position: fixed;
   top: 0px;
   width: 100%;
+  height: 100px;
+  z-index: 100;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -17,5 +23,6 @@
   background-color: white;
   border: #028090 2px solid;
   padding: 5px;
+  box-sizing: border-border;
 }
 
